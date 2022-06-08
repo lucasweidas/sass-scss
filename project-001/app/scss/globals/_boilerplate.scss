@@ -1,0 +1,23 @@
+// You can rename the namespace with ("as" othename). You can also do ("as" *), and you don't need to put the namespace before the SCSS variable name.
+
+// @use '../util/';
+// @use '../util' as *;
+@use '../util' as u;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: u.$font;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

@@ -1,0 +1,61 @@
+@use '../util/' as u;
+
+// Creating a place holder: A especial SASS selector that won't create any final css style. It's just a place where you can add styles rules and later use it to add styles in somewhere else.
+%widget {
+  padding: u.rem(16);
+}
+
+.grid {
+  width: min(100% - 2.5rem, 62.5rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 2.5rem;
+  margin-inline: auto;
+
+  @include u.breakpoint(large) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  &__main,
+  &__sidebar {
+    padding: 2rem;
+  }
+
+  &__main {
+    // background-color: hsl(240, 45%, 30%);
+
+    // @media(min-width) order = from smallest to largest
+    @include u.breakpoint(medium) {
+      background-color: hsl(105, 45%, 30%);
+    }
+
+    @include u.breakpoint(large) {
+      background-color: hsl(51, 45%, 30%);
+    }
+  }
+
+  &__sidebar {
+    // @media(max-width) order = from largest to smallest
+    @include u.breakpoint-down(medium) {
+      text-align: center;
+    }
+
+    @include u.breakpoint-down(small) {
+      text-align: end;
+    }
+  }
+
+  &__widget {
+    $widget: &;
+    padding: u.rem(16);
+
+    &--red {
+      // @extend .grid__widget;
+      // @extend #{$widget}; // Same as @extend .grid__widget;
+      // @extend %widget; // Extending from a place holder selector
+      background-color: hsl(0, 80%, 40%);
+    }
+  }
+}

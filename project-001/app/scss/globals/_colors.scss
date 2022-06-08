@@ -1,0 +1,13 @@
+:root {
+  --background-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 96%);
+}
+
+// Helper/Utility Classes: It usually contains only a few lines of styles and has a descriptive name for what it does.
+.blue {
+  background-color: hsl(215, 80%, 40%);
+}
+
+.purple {
+  background-color: hsl(283, 80%, 40%);
+}
