@@ -1,6 +1,6 @@
 @use '../util/' as u;
 
-// Place holder selector: It is a especial SASS selector that does not create any final css style. It's just a place where you can add styles rules and later use it to add styles somewhere else.
+// Place Holder Selector: It is a especial SASS selector that does not create any final css style. It's just a place where you can add styles rules and later use it to add styles somewhere else.
 %widget {
   padding: u.rem(16);
 }
